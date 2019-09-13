@@ -1,0 +1,60 @@
+
+<Register>:
+    BoxLayout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+        Label:
+            text: 'Registration Screen'
+            font_size: 40
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Name'
+                font_size: 25
+                halign: 'left'
+                text_size: root.width-25, 25
+
+            TextInput:
+                id: name
+                multiline:False
+                font_size: 28
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Email'
+                halign: 'left'
+                font_size: 25
+                text_size: root.width-25, 25
+
+            TextInput:
+                id: email
+                multiline:False
+                font_size: 28
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Password'
+                halign: 'left'
+                font_size: 25
+                text_size: root.width-25, 25
+
+            TextInput:
+                id: password
+                multiline:False
+                password:True
+                font_size: 28
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: 'Submit'
+                font_size: 24
+                on_press: root.do_register(name.text, email.text, password.text)
+            Button:
+                text: 'Cancel'
+                font_size: 24
+                on_press: root.disconnect()    
+            
